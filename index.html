@@ -11,7 +11,7 @@
     <!-- Navigation -->
     <nav>
         <div class="logo">
-            <h1>HealthCare<span>Center</span></h1>
+            <h1>We Health <span>Center</span></h1>
         </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
@@ -51,5 +51,155 @@
             </div>
         </div>
     </section>
+
+    <!-- Doctors Section -->
+    <section id="doctors" class="doctors">
+        <h2>Our Medical Experts</h2>
+        <p class="section-description">Meet our team of experienced healthcare professionals</p>
+        
+        <div class="doctors-grid">
+            <div class="doctor-card">
+                <div class="doctor-image">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2" alt="Dr. Sarah Johnson">
+                </div>
+                <div class="doctor-info">
+                    <h3>Dr. Sarah Johnson</h3>
+                    <p class="specialty">Chief Medical Officer</p>
+                    <p class="credentials">MD, FACP</p>
+                    <div class="doctor-description">
+                        <p>Specializing in Internal Medicine with over 15 years of experience in primary care and preventive medicine.</p>
+                    </div>
+                    <div class="doctor-schedule">
+                        <p>Available: Mon-Fri</p>
+                        <button class="schedule-btn">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doctor-card">
+                <div class="doctor-image">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d" alt="Dr. Michael Chen">
+                </div>
+                <div class="doctor-info">
+                    <h3>Dr. Michael Chen</h3>
+                    <p class="specialty">Cardiologist</p>
+                    <p class="credentials">MD, FACC</p>
+                    <div class="doctor-description">
+                        <p>Expert in cardiovascular health with specialized training in interventional cardiology.</p>
+                    </div>
+                    <div class="doctor-schedule">
+                        <p>Available: Tue-Sat</p>
+                        <button class="schedule-btn">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doctor-card">
+                <div class="doctor-image">
+                    <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f" alt="Dr. Emily Rodriguez">
+                </div>
+                <div class="doctor-info">
+                    <h3>Dr. Emily Rodriguez</h3>
+                    <p class="specialty">Pediatrician</p>
+                    <p class="credentials">MD, FAAP</p>
+                    <div class="doctor-description">
+                        <p>Dedicated to providing comprehensive care for children from newborns to adolescents.</p>
+                    </div>
+                    <div class="doctor-schedule">
+                        <p>Available: Mon-Thu</p>
+                        <button class="schedule-btn">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>Have questions? We're here to help!</p>
+                
+                <div class="info-items">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>123 Healthcare Ave, Medical District<br>GRAFTON FT</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+0909090990</p>
+                            <p>Emergency: 099</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@healthcarecenter.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form id="appointmentForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Full Name</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email Address</label>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" required>
+                            <label for="phone">Phone Number</label>
+                        </div>
+
+                        <div class="form-group">
+                            <select id="department" name="department" required>
+                                <option value="">Select Department</option>
+                                <option value="general">General Medicine</option>
+                                <option value="cardiology">Cardiology</option>
+                                <option value="pediatrics">Pediatrics</option>
+                                <option value="orthopedics">Orthopedics</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea id="message" name="message" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 HealthCare Center. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

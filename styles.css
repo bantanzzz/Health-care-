@@ -13,6 +13,11 @@ nav {
     padding: 1rem 5%;
     background-color: #ffffff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;  
+    right: 0;
+    z-index: 1000;
 }
 
 .logo h1 {
@@ -46,7 +51,8 @@ nav {
 
 /* Hero Section */
 .hero {
-    height: 80vh;
+    margin-top: -70px;
+    height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1538108149393-fbbd81895907?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     background-position: center;
@@ -429,4 +435,9 @@ footer {
     .social-links {
         margin-top: 1rem;
     }
+}
+
+/* Add padding to body to prevent content from hiding under fixed nav */
+body {
+    padding-top: 70px;
 }

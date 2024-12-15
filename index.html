@@ -156,15 +156,26 @@
                         <label for="name">Full Name</label>
                     </div>
 
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" required>
-                        <label for="email">Email Address</label>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email Address</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" required>
+                            <label for="phone">Phone Number</label>
+                        </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="tel" id="phone" name="phone" required>
-                            <label for="phone">Phone Number</label>
+                            <select id="doctor" name="doctor" required>
+                                <option value="">Select Doctor</option>
+                                <option value="dr-johnson">Dr. Sarah Johnson</option>
+                                <option value="dr-chen">Dr. Michael Chen</option>
+                                <option value="dr-rodriguez">Dr. Emily Rodriguez</option>
+                            </select>
                         </div>
 
                         <div class="form-group">
@@ -178,12 +189,41 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <textarea id="message" name="message" required></textarea>
-                        <label for="message">Your Message</label>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="date" id="appointment-date" name="appointment-date" required>
+                            <label for="appointment-date">Preferred Date</label>
+                        </div>
+
+                        <div class="form-group">
+                            <select id="appointment-time" name="appointment-time" required>
+                                <option value="">Select Time</option>
+                                <option value="09:00">09:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="14:00">02:00 PM</option>
+                                <option value="15:00">03:00 PM</option>
+                                <option value="16:00">04:00 PM</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <button type="submit" class="submit-btn">Send Message</button>
+                    <div class="form-group">
+                        <textarea id="symptoms" name="symptoms" required></textarea>
+                        <label for="symptoms">Please describe your symptoms or reason for visit</label>
+                    </div>
+
+                    <div class="form-group">
+                        <select id="appointment-type" name="appointment-type" required>
+                            <option value="">Select Appointment Type</option>
+                            <option value="regular">Regular Checkup</option>
+                            <option value="followup">Follow-up Visit</option>
+                            <option value="emergency">Urgent Care</option>
+                            <option value="consultation">Consultation</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Book Appointment</button>
                 </form>
             </div>
         </div>

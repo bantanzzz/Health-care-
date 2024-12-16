@@ -196,6 +196,34 @@
         </div>
     </section>
 
+    <!-- Video Chat Section -->
+    <section id="video-chat" class="video-chat">
+        <h2>Virtual Consultation</h2>
+        <div class="video-container">
+            <div class="video-grid">
+                <div class="video-box">
+                    <video id="localVideo" autoplay playsinline muted></video>
+                    <p>You</p>
+                </div>
+                <div class="video-box">
+                    <video id="remoteVideo" autoplay playsinline></video>
+                    <p>Doctor</p>
+                </div>
+            </div>
+            <div class="video-controls">
+                <button id="startButton" class="control-btn">
+                    <i class="fas fa-video"></i> Start Video
+                </button>
+                <button id="stopButton" class="control-btn" disabled>
+                    <i class="fas fa-video-slash"></i> Stop Video
+                </button>
+                <button id="muteButton" class="control-btn">
+                    <i class="fas fa-microphone"></i> Mute
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -224,6 +252,51 @@
                 hamburger.classList.remove("active");
                 navLinks.classList.remove("active");
             }));
+        });
+
+        // Video Chat functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const localVideo = document.getElementById('localVideo');
+            const startButton = document.getElementById('startButton');
+            const stopButton = document.getElementById('stopButton');
+            const muteButton = document.getElementById('muteButton');
+            let stream = null;
+
+            startButton.addEventListener('click', async () => {
+                try {
+                    stream = await navigator.mediaDevices.getUserMedia({ 
+                        video: true, 
+                        audio: true 
+                    });
+                    localVideo.srcObject = stream;
+                    startButton.disabled = true;
+                    stopButton.disabled = false;
+                } catch (err) {
+                    console.error('Error accessing media devices:', err);
+                    alert('Unable to access camera and microphone');
+                }
+            });
+
+            stopButton.addEventListener('click', () => {
+                if (stream) {
+                    stream.getTracks().forEach(track => track.stop());
+                    localVideo.srcObject = null;
+                    startButton.disabled = false;
+                    stopButton.disabled = true;
+                }
+            });
+
+            let isMuted = false;
+            muteButton.addEventListener('click', () => {
+                if (stream) {
+                    const audioTracks = stream.getAudioTracks();
+                    isMuted = !isMuted;
+                    audioTracks.forEach(track => track.enabled = !isMuted);
+                    muteButton.innerHTML = isMuted ? 
+                        '<i class="fas fa-microphone-slash"></i> Unmute' : 
+                        '<i class="fas fa-microphone"></i> Mute';
+                }
+            });
         });
     </script>
 </body>

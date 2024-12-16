@@ -483,3 +483,70 @@ footer {
 body {
     padding-top: 70px;
 }
+
+.video-chat {
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+}
+
+.video-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.video-box {
+    background-color: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-box video {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.video-box p {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.video-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.control-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.control-btn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.control-btn:hover:not(:disabled) {
+    background-color: #0056b3;
+}

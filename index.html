@@ -205,9 +205,9 @@
                     <video id="localVideo" autoplay playsinline muted></video>
                     <p>You</p>
                 </div>
-                <div class="video-box">
-                    <video id="remoteVideo" autoplay playsinline></video>
-                    <p>Doctor</p>
+                <div class="video-box" id="doctorVideoBox" style="display: none;">
+                    <img src="path/to/doctor-phone-image.jpg" alt="Doctor on Phone" id="remoteImage" class="doctor-image">
+                    <p>Doctor: +1234567890</p>
                 </div>
             </div>
             <div class="video-controls">
@@ -260,9 +260,19 @@
             const startButton = document.getElementById('startButton');
             const stopButton = document.getElementById('stopButton');
             const muteButton = document.getElementById('muteButton');
+            const doctorVideoBox = document.getElementById('doctorVideoBox');
             let stream = null;
 
+            // Simulated phone number for the doctor
+            const doctorPhoneNumber = "+232 79 585406"; // Replace with the actual phone number
+
             startButton.addEventListener('click', async () => {
+                // Simulate ringing the doctor's phone
+                alert(`Calling Doctor at ${doctorPhoneNumber}...`); // Simulate the call
+
+                // Show the doctor's video box
+                doctorVideoBox.style.display = 'block';
+
                 try {
                     stream = await navigator.mediaDevices.getUserMedia({ 
                         video: true, 
@@ -281,6 +291,7 @@
                 if (stream) {
                     stream.getTracks().forEach(track => track.stop());
                     localVideo.srcObject = null;
+                    doctorVideoBox.style.display = 'none'; // Hide the doctor's video box
                     startButton.disabled = false;
                     stopButton.disabled = true;
                 }

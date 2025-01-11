@@ -231,8 +231,10 @@ nav {
 }
 
 .doctor-image {
-    height: 250px;
-    overflow: hidden;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .doctor-image img {

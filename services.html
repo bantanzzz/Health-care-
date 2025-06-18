@@ -265,30 +265,55 @@
                 bookingForm.reset();
             });
 
-         
             const chatMessages = document.getElementById('chatMessages');
             const userInput = document.getElementById('userInput');
             const sendButton = document.getElementById('sendMessage');
             const typingIndicator = document.getElementById('typingIndicator');
 
-            
-            const responses = {
-                'appointment': 'To book an appointment, you can use our online booking form above .',
-                'hours': 'Our main clinic is open Monday-Friday 8:00 AM - 8:00 PM, Saturday 9:00 AM - 5:00 PM. Emergency services are available 24/7.',
-                'insurance': 'We accept most major insurance plans. You can check your coverage using the button above.',
-                'emergency': 'For emergencies, please call 099 or visit our emergency department which is open 24/7.',
-                'location': 'We are located at 123 Healthcare Ave, Medical District, GRAFTON FT.',
-                'services': 'We offer a wide range of services including Primary Care, Specialist Care, Emergency Care, Dental Care, Eye Care, and Mental Health services.',
-                'payment': 'We accept various payment methods including cash, credit cards, and insurance. Payment plans are available upon request.',
-                'covid': 'We follow all CDC guidelines for COVID-19 safety. Masks are required, and we offer telemedicine appointments.',
-                'prescription': 'For prescription refills, please contact your doctor or use our online portal.',
-                'test results': 'Test results are typically available within 24-48 hours. You can access them through our patient portal.',
-                'telemedicine': 'We offer telemedicine appointments for non-emergency consultations. You can book these through our online portal or by calling us.',
-                'specialist': 'We have specialists in Cardiology, Neurology, Orthopedics, and Dermatology. You can view their profiles on our Doctors page.',
-                'vaccination': 'We provide various vaccinations including flu shots, COVID-19 vaccines, and routine immunizations. Please call to schedule.',
-                'lab': 'Our on-site laboratory is open Monday-Friday 7:00 AM - 6:00 PM. No appointment needed for most tests.',
-                'parking': 'Free parking is available in our parking garage. The entrance is located on the north side of the building.'
-            };
+            // AI API Configuration
+            const AI_API_KEY = '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'; // Add your OpenAI API key here
+            const AI_API_URL = 'https://api.openai.com/v1/chat/completions';
+
+            async function getAIResponse(userMessage) {
+                if (!AI_API_KEY) {
+                    return "I apologize, but the AI assistant is not properly configured. Please contact the website administrator.";
+                }
+
+                try {
+                    const response = await fetch(AI_API_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${AI_API_KEY}`
+                        },
+                        body: JSON.stringify({
+                            model: "gpt-3.5-turbo",
+                            messages: [
+                                {
+                                    role: "system",
+                                    content: "You are a helpful healthcare assistant for We Health Center. Provide accurate and helpful information about medical services, appointments, and general health queries. Always maintain a professional and caring tone. If asked about specific medical conditions or treatments, recommend consulting with a healthcare professional."
+                                },
+                                {
+                                    role: "user",
+                                    content: userMessage
+                                }
+                            ],
+                            max_tokens: 150,
+                            temperature: 0.7
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('API request failed');
+                    }
+
+                    const data = await response.json();
+                    return data.choices[0].message.content;
+                } catch (error) {
+                    console.error('Error:', error);
+                    return "I apologize, but I'm having trouble connecting to my knowledge base. Please try again later or contact our staff directly.";
+                }
+            }
 
             function showTypingIndicator() {
                 typingIndicator.style.display = 'flex';
@@ -310,25 +335,19 @@
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             }
 
-            function processUserInput(input) {
-                input = input.toLowerCase();
-                let response = "I'm not sure about that. Please contact our staff for more information.";
-
-               
-                for (let key in responses) {
-                    if (input.includes(key)) {
-                        response = responses[key];
-                        break;
-                    }
-                }
-
+            async function processUserInput(input) {
                 showTypingIndicator();
-
-             
-                setTimeout(() => {
+                
+                try {
+                    const response = await getAIResponse(input);
+                    setTimeout(() => {
+                        hideTypingIndicator();
+                        addMessage(response);
+                    }, 1000);
+                } catch (error) {
                     hideTypingIndicator();
-                    addMessage(response);
-                }, 1000);
+                    addMessage("I apologize, but I'm having trouble processing your request. Please try again or contact our staff directly.");
+                }
             }
 
             function handleUserInput() {
@@ -340,7 +359,6 @@
                 }
             }
 
-         
             document.querySelectorAll('.quick-action-btn').forEach(button => {
                 button.addEventListener('click', () => {
                     const question = button.getAttribute('data-question');

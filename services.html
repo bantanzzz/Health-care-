@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
+ 
     <nav>
         <div class="logo">
             <h1>We Health <span>Center</span></h1>
@@ -28,13 +28,12 @@
         </ul>
     </nav>
 
-    <!-- Services Header -->
+    
     <header class="page-header">
         <h1>Our Medical Services</h1>
         <p>Comprehensive healthcare solutions for you and your family</p>
     </header>
 
-    <!-- Main Services -->
     <section class="services-main">
         <div class="services-grid">
             <div class="service-card">
@@ -78,7 +77,7 @@
         </div>
     </section>
 
-    <!-- Additional Services -->
+    
     <section class="additional-services">
         <h2>Additional Services</h2>
         <div class="additional-services-grid">
@@ -105,7 +104,7 @@
         </div>
     </section>
 
-    <!-- Insurance Information -->
+   
     <section class="insurance-info">
         <h2>Insurance & Payment</h2>
         <div class="insurance-content">
@@ -124,7 +123,7 @@
         </div>
     </section>
 
-    <!-- Book Appointment Form -->
+    
     <section class="booking-section">
         <h2>Book an Appointment</h2>
         <div class="booking-container">
@@ -183,7 +182,7 @@
         </div>
     </section>
 
-    <!-- Virtual Assistant -->
+    
     <section class="virtual-assistant">
         <div class="assistant-container">
             <div class="assistant-header">
@@ -231,10 +230,10 @@
         </div>
     </section>
 
-    <!-- Footer -->
+
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 HealthCare Center. All rights reserved.</p>
+            <p>&copy; 2025  HealthCare Center. All rights reserved.</p>
             <div class="social-links">
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -259,7 +258,6 @@
                 navLinks.classList.remove("active");
             }));
 
-            // Booking form submission
             const bookingForm = document.getElementById('bookingForm');
             bookingForm.addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -267,13 +265,13 @@
                 bookingForm.reset();
             });
 
-            // Virtual Assistant Functionality
+         
             const chatMessages = document.getElementById('chatMessages');
             const userInput = document.getElementById('userInput');
             const sendButton = document.getElementById('sendMessage');
             const typingIndicator = document.getElementById('typingIndicator');
 
-            // Common health-related questions and answers
+            
             const responses = {
                 'appointment': 'To book an appointment, you can use our online booking form above or call us at +0909090990.',
                 'hours': 'Our main clinic is open Monday-Friday 8:00 AM - 8:00 PM, Saturday 9:00 AM - 5:00 PM. Emergency services are available 24/7.',
@@ -316,7 +314,7 @@
                 input = input.toLowerCase();
                 let response = "I'm not sure about that. Please contact our staff for more information.";
 
-                // Check for keywords in the input
+               
                 for (let key in responses) {
                     if (input.includes(key)) {
                         response = responses[key];
@@ -324,10 +322,9 @@
                     }
                 }
 
-                // Show typing indicator
                 showTypingIndicator();
 
-                // Add a small delay to simulate typing
+             
                 setTimeout(() => {
                     hideTypingIndicator();
                     addMessage(response);
@@ -343,7 +340,7 @@
                 }
             }
 
-            // Quick action buttons
+         
             document.querySelectorAll('.quick-action-btn').forEach(button => {
                 button.addEventListener('click', () => {
                     const question = button.getAttribute('data-question');

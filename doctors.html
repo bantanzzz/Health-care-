@@ -1,0 +1,183 @@
+ye s<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors - HealthCare Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <h1>We Health <span>Center</span></h1>
+        </div>
+        
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+   
+    <header class="page-header">
+        <h1>Our Medical Team</h1>
+        <p>Meet our experienced healthcare professionals dedicated to your well-being</p>
+    </header>
+
+ 
+    <section class="department-filter">
+        <h2>Find a Doctor by Department</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-department="all">All Departments</button>
+            <button class="filter-btn" data-department="cardiology">Cardiology</button>
+            <button class="filter-btn" data-department="neurology">Neurology</button>
+            <button class="filter-btn" data-department="pediatrics">Pediatrics</button>
+            <button class="filter-btn" data-department="orthopedics">Orthopedics</button>
+        </div>
+    </section>
+
+    
+    <section class="doctors-grid">
+       
+        <div class="doctor-card" data-department="cardiology">
+            <div class="doctor-image">
+                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d" alt="Dr. Michael Chen">
+            </div>
+            <div class="doctor-info">
+                <h3>Dr. Michael Chen</h3>
+                <p class="specialty">Cardiologist</p>
+                <p class="credentials">MD, FACC</p>
+                <div class="doctor-description">
+                    <p>Expert in cardiovascular health with specialized training in interventional cardiology.</p>
+                    <ul class="expertise">
+                        <li>Interventional Cardiology</li>
+                        <li>Heart Disease Prevention</li>
+                        <li>Cardiac Rehabilitation</li>
+                    </ul>
+                </div>
+                <div class="doctor-schedule">
+                    <p>Available: Tue-Sat</p>
+                    <button class="schedule-btn">Book Appointment</button>
+                </div>
+            </div>
+        </div>
+
+     
+        <div class="doctor-card" data-department="neurology">
+            <div class="doctor-image">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2" alt="Dr. Sarah Johnson">
+            </div>
+            <div class="doctor-info">
+                <h3>Dr. Sarah Johnson</h3>
+                <p class="specialty">Neurologist</p>
+                <p class="credentials">MD, PhD</p>
+                <div class="doctor-description">
+                    <p>Specializing in neurological disorders with focus on innovative treatment approaches.</p>
+                    <ul class="expertise">
+                        <li>Neurological Disorders</li>
+                        <li>Stroke Management</li>
+                        <li>Headache Treatment</li>
+                    </ul>
+                </div>
+                <div class="doctor-schedule">
+                    <p>Available: Mon-Fri</p>
+                    <button class="schedule-btn">Book Appointment</button>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="doctor-card" data-department="pediatrics">
+            <div class="doctor-image">
+                <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f" alt="Dr. Emily Rodriguez">
+            </div>
+            <div class="doctor-info">
+                <h3>Dr. Emily Rodriguez</h3>
+                <p class="specialty">Pediatrician</p>
+                <p class="credentials">MD, FAAP</p>
+                <div class="doctor-description">
+                    <p>Dedicated to providing comprehensive care for children from newborns to adolescents.</p>
+                    <ul class="expertise">
+                        <li>Child Development</li>
+                        <li>Vaccination</li>
+                        <li>Pediatric Nutrition</li>
+                    </ul>
+                </div>
+                <div class="doctor-schedule">
+                    <p>Available: Mon-Thu</p>
+                    <button class="schedule-btn">Book Appointment</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="virtual-consultation">
+        <h2>Virtual Consultation Available</h2>
+        <p>Schedule a video consultation with our doctors from the comfort of your home</p>
+        <button class="virtual-btn">Start Virtual Visit</button>
+    </section>
+
+  
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 HealthCare Center. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav-links");
+
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+
+            document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navLinks.classList.remove("active");
+            }));
+
+            
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const doctorCards = document.querySelectorAll('.doctor-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const department = button.getAttribute('data-department');
+                    
+                
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    doctorCards.forEach(card => {
+                        if (department === 'all' || card.getAttribute('data-department') === department) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

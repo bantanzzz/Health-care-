@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - HealthCare Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <h1>We Health <span>Center</span></h1>
+        </div>
+        
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Services Header -->
+    <header class="page-header">
+        <h1>Our Medical Services</h1>
+        <p>Comprehensive healthcare solutions for you and your family</p>
+    </header>
+
+    <!-- Main Services -->
+    <section class="services-main">
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-heartbeat"></i>
+                <h3>Primary Care</h3>
+                <p>Comprehensive health care for all ages</p>
+                <ul class="service-details">
+                    <li>Regular check-ups</li>
+                    <li>Preventive care</li>
+                    <li>Chronic disease management</li>
+                    <li>Vaccinations</li>
+                </ul>
+                <button class="learn-more">Learn More</button>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-stethoscope"></i>
+                <h3>Specialist Care</h3>
+                <p>Expert care in various medical fields</p>
+                <ul class="service-details">
+                    <li>Cardiology</li>
+                    <li>Neurology</li>
+                    <li>Orthopedics</li>
+                    <li>Dermatology</li>
+                </ul>
+                <button class="learn-more">Learn More</button>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-hospital-user"></i>
+                <h3>Emergency Care</h3>
+                <p>24/7 emergency medical services</p>
+                <ul class="service-details">
+                    <li>Trauma care</li>
+                    <li>Critical care</li>
+                    <li>Emergency surgery</li>
+                    <li>Ambulance service</li>
+                </ul>
+                <button class="learn-more">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section class="additional-services">
+        <h2>Additional Services</h2>
+        <div class="additional-services-grid">
+            <div class="additional-service">
+                <i class="fas fa-tooth"></i>
+                <h3>Dental Care</h3>
+                <p>Complete dental services including preventive, restorative, and cosmetic dentistry.</p>
+            </div>
+            <div class="additional-service">
+                <i class="fas fa-eye"></i>
+                <h3>Eye Care</h3>
+                <p>Comprehensive eye examinations and vision correction services.</p>
+            </div>
+            <div class="additional-service">
+                <i class="fas fa-brain"></i>
+                <h3>Mental Health</h3>
+                <p>Professional counseling and mental health support services.</p>
+            </div>
+            <div class="additional-service">
+                <i class="fas fa-pills"></i>
+                <h3>Pharmacy</h3>
+                <p>On-site pharmacy with prescription and over-the-counter medications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance Information -->
+    <section class="insurance-info">
+        <h2>Insurance & Payment</h2>
+        <div class="insurance-content">
+            <div class="insurance-image">
+                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85" alt="Insurance Coverage" class="insurance-img">
+            </div>
+            <div class="insurance-details">
+                <p>We accept most major insurance plans and offer flexible payment options.</p>
+                <div class="insurance-logos">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85" alt="Insurance Provider 1" class="provider-logo">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85" alt="Insurance Provider 2" class="provider-logo">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85" alt="Insurance Provider 3" class="provider-logo">
+                </div>
+                <button class="check-coverage">Check Your Coverage</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Appointment Form -->
+    <section class="booking-section">
+        <h2>Book an Appointment</h2>
+        <div class="booking-container">
+            <form id="bookingForm" class="booking-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="fullName" name="fullName" required>
+                        <label for="fullName">Full Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email Address</label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" required>
+                        <label for="phone">Phone Number</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="service" name="service" required>
+                            <option value="">Select Service</option>
+                            <option value="primary">Primary Care</option>
+                            <option value="specialist">Specialist Care</option>
+                            <option value="emergency">Emergency Care</option>
+                            <option value="dental">Dental Care</option>
+                            <option value="eye">Eye Care</option>
+                            <option value="mental">Mental Health</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="date" id="appointmentDate" name="appointmentDate" required>
+                        <label for="appointmentDate">Preferred Date</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="appointmentTime" name="appointmentTime" required>
+                            <option value="">Select Time</option>
+                            <option value="morning">Morning (9:00 AM - 12:00 PM)</option>
+                            <option value="afternoon">Afternoon (1:00 PM - 4:00 PM)</option>
+                            <option value="evening">Evening (4:00 PM - 7:00 PM)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <textarea id="message" name="message" required></textarea>
+                    <label for="message">Additional Notes</label>
+                </div>
+
+                <button type="submit" class="submit-btn">Book Appointment</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Virtual Assistant -->
+    <section class="virtual-assistant">
+        <div class="assistant-container">
+            <div class="assistant-header">
+                <h2>Virtual Health Assistant</h2>
+                <p>Get instant answers to your health-related questions</p>
+            </div>
+            <div class="quick-actions">
+                <button class="quick-action-btn" data-question="How do I book an appointment?">
+                    <i class="fas fa-calendar-check"></i>
+                    Book Appointment
+                </button>
+                <button class="quick-action-btn" data-question="What are your business hours?">
+                    <i class="fas fa-clock"></i>
+                    Business Hours
+                </button>
+                <button class="quick-action-btn" data-question="Do you accept my insurance?">
+                    <i class="fas fa-file-invoice"></i>
+                    Insurance Info
+                </button>
+                <button class="quick-action-btn" data-question="What services do you offer?">
+                    <i class="fas fa-list"></i>
+                    Our Services
+                </button>
+            </div>
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message assistant">
+                        <div class="message-content">
+                            <p>Hello! I'm your virtual health assistant. How can I help you today? You can ask me about appointments, services, insurance, or use the quick action buttons above.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="typing-indicator" id="typingIndicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="Type your question here...">
+                    <button id="sendMessage">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 HealthCare Center. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav-links");
+
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+
+            document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navLinks.classList.remove("active");
+            }));
+
+            // Booking form submission
+            const bookingForm = document.getElementById('bookingForm');
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for booking an appointment. We will contact you shortly to confirm.');
+                bookingForm.reset();
+            });
+
+            // Virtual Assistant Functionality
+            const chatMessages = document.getElementById('chatMessages');
+            const userInput = document.getElementById('userInput');
+            const sendButton = document.getElementById('sendMessage');
+            const typingIndicator = document.getElementById('typingIndicator');
+
+            // Common health-related questions and answers
+            const responses = {
+                'appointment': 'To book an appointment, you can use our online booking form above or call us at +0909090990.',
+                'hours': 'Our main clinic is open Monday-Friday 8:00 AM - 8:00 PM, Saturday 9:00 AM - 5:00 PM. Emergency services are available 24/7.',
+                'insurance': 'We accept most major insurance plans. You can check your coverage using the button above.',
+                'emergency': 'For emergencies, please call 099 or visit our emergency department which is open 24/7.',
+                'location': 'We are located at 123 Healthcare Ave, Medical District, GRAFTON FT.',
+                'services': 'We offer a wide range of services including Primary Care, Specialist Care, Emergency Care, Dental Care, Eye Care, and Mental Health services.',
+                'payment': 'We accept various payment methods including cash, credit cards, and insurance. Payment plans are available upon request.',
+                'covid': 'We follow all CDC guidelines for COVID-19 safety. Masks are required, and we offer telemedicine appointments.',
+                'prescription': 'For prescription refills, please contact your doctor or use our online portal.',
+                'test results': 'Test results are typically available within 24-48 hours. You can access them through our patient portal.',
+                'telemedicine': 'We offer telemedicine appointments for non-emergency consultations. You can book these through our online portal or by calling us.',
+                'specialist': 'We have specialists in Cardiology, Neurology, Orthopedics, and Dermatology. You can view their profiles on our Doctors page.',
+                'vaccination': 'We provide various vaccinations including flu shots, COVID-19 vaccines, and routine immunizations. Please call to schedule.',
+                'lab': 'Our on-site laboratory is open Monday-Friday 7:00 AM - 6:00 PM. No appointment needed for most tests.',
+                'parking': 'Free parking is available in our parking garage. The entrance is located on the north side of the building.'
+            };
+
+            function showTypingIndicator() {
+                typingIndicator.style.display = 'flex';
+            }
+
+            function hideTypingIndicator() {
+                typingIndicator.style.display = 'none';
+            }
+
+            function addMessage(message, isUser = false) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${isUser ? 'user' : 'assistant'}`;
+                messageDiv.innerHTML = `
+                    <div class="message-content">
+                        <p>${message}</p>
+                    </div>
+                `;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function processUserInput(input) {
+                input = input.toLowerCase();
+                let response = "I'm not sure about that. Please contact our staff for more information.";
+
+                // Check for keywords in the input
+                for (let key in responses) {
+                    if (input.includes(key)) {
+                        response = responses[key];
+                        break;
+                    }
+                }
+
+                // Show typing indicator
+                showTypingIndicator();
+
+                // Add a small delay to simulate typing
+                setTimeout(() => {
+                    hideTypingIndicator();
+                    addMessage(response);
+                }, 1000);
+            }
+
+            function handleUserInput() {
+                const message = userInput.value.trim();
+                if (message) {
+                    addMessage(message, true);
+                    userInput.value = '';
+                    processUserInput(message);
+                }
+            }
+
+            // Quick action buttons
+            document.querySelectorAll('.quick-action-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const question = button.getAttribute('data-question');
+                    addMessage(question, true);
+                    processUserInput(question);
+                });
+            });
+
+            sendButton.addEventListener('click', handleUserInput);
+            userInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    handleUserInput();
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
